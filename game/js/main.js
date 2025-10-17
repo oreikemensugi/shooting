@@ -1,27 +1,25 @@
+import{ player ,initPlayer,drawPlayer } from "./player.js";
+import { enemies, spawnEnemy } from "./enemies.js";
+
+
 
 const canvas =document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const pleyer={
-    x: canvas.width/2 -15,
-    y: canvas.height -60,
-    width:30,
-    height:30,
-    color:"white",
-    life: 3
-};
+initPlayer(canvas);
+spawnEnemy (canvas);
 
 const bullets=[];
 const BULLET_SPEED = -10;
 
 function tryShoot(){
     bullets.push({
-        x: pleyer.x ,
-        y: pleyer.y,
+        x: player.x ,
+        y: player.y,
         width:5,
         height:5, 
         vy: BULLET_SPEED,
-        color:"red"
+        color:"yellow"
     })
     }
 
@@ -31,12 +29,12 @@ function tryShoot(){
 
 window.addEventListener("keydown",(e)=>{
     if(e.key === "ArrowLeft"){
-       if(pleyer.x >10){
-        pleyer.x-=10;
+       if(player.x >10){
+        player.x-=10;
        }
     }else if(e.key === "ArrowRight"){
-         if(pleyer.x < canvas.width - pleyer.width -10){   
-         pleyer.x+=10; 
+         if(player.x < canvas.width - player.width -10){   
+         player.x+=10; 
             }
     }else if(e.code === "Space"){
         tryShoot();
@@ -61,14 +59,19 @@ function draw(){
     ctx.fillStyle="black";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
-      ctx.fillStyle=pleyer.color;
-      ctx.fillRect(pleyer.x,pleyer.y,pleyer.width,pleyer.height); 
+    drawPlayer (ctx);
 
-      ctx.fillStyle="red";
+      ctx.fillStyle="cyan";
 
          for(let i =bullets.length -1; i >=0; i--){
         const bullet = bullets[i];
          ctx.fillRect(bullet.x,bullet.y,bullet.width,bullet.height);
+         }
+          ctx.fillStyle="red";
+
+         for(let i =0;1<enemies.length; i++){
+        const enemy = enemies[i];
+         ctx.fillRect(enemy.x,enemy.y,enemy.width,enemy.height);
          }
 }
 
