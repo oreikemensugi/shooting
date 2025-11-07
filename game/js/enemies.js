@@ -1,12 +1,13 @@
 export const enemies = [];
-    const SIZE=26;
-
+    const SIZE=100;
+const enemyImage = new Image();
+enemyImage.src = "https://hochi.news/images/2024/03/24/20240324-OHT1I51121-T.jpg";
     function pushEnemies(canvas) {
         const w=SIZE;
         const h=SIZE;
         const x=Math.random()*(canvas.width -w);
         const y=0;
-        const vy=5;
+        const vy=100;
 
         enemies.push({x,y,width:w,height:h,vy});
     }
@@ -31,5 +32,6 @@ export const enemies = [];
          ctx.fillStyle = "crimson";
         for(const e of enemies) {
              ctx.fillRect(e.x, e.y, e.width, e.height);
+             ctx.drawImage(enemyImage,e.x,e.y,e.width,e.height);
          }
      }   
