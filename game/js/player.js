@@ -5,12 +5,12 @@ export const player = {
     y: 0,
     width: 60,
     height: 60,
-    color: "pink",
+    color: "transparent",
     life: 3,
     score: 0,
 };
 const playerImage = new Image();
-playerImage.src = "https://www.jsports.co.jp/img/web/page/baseball/mlb/player/2025/shoheiohtani.jpg";
+playerImage.src = "https://e1.pxfuel.com/desktop-wallpaper/985/174/desktop-wallpaper-naruto-kurama-fire-flame-person-human-transparent-png-pngset.jpg";
 export function initPlayer(canvas) {
     player.x = canvas.width / 2 - player.width / 2;
     player.y = canvas.height - 60;

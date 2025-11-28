@@ -1,19 +1,19 @@
 export const enemies = [];
-    const SIZE=100;
+    const SIZE=50;
 const enemyImage = new Image();
-enemyImage.src = "https://hochi.news/images/2024/03/24/20240324-OHT1I51121-T.jpg";
+enemyImage.src = "https://w7.pngwing.com/pngs/339/709/png-transparent-sasuke-uchiha-naruto-shippuden-naruto-vs-sasuke-naruto-uzumaki-itachi-uchiha-orochimaru-naruto-purple-black-hair-manga-thumbnail.png";
     function pushEnemies(canvas) {
         const w=SIZE;
         const h=SIZE;
         const x=Math.random()*(canvas.width -w);
         const y=0;
-        const vy=100;
+        const vy=5;
 
         enemies.push({x,y,width:w,height:h,vy});
     }
 
     export function spawnEnemy(canvas) {
-        if(enemies.length < 5) {
+        if(enemies.length < 30) {
             pushEnemies(canvas);
         }
     }
@@ -29,7 +29,7 @@ enemyImage.src = "https://hochi.news/images/2024/03/24/20240324-OHT1I51121-T.jpg
     }
 
      export function drawEnemies(ctx) {
-         ctx.fillStyle = "crimson";
+         ctx.fillStyle = "transparent";
         for(const e of enemies) {
              ctx.fillRect(e.x, e.y, e.width, e.height);
              ctx.drawImage(enemyImage,e.x,e.y,e.width,e.height);
