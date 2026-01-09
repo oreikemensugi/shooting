@@ -1,7 +1,7 @@
 export const enemies = [];
     const SIZE=50;
 const enemyImage = new Image();
-enemyImage.src = "https://w7.pngwing.com/pngs/339/709/png-transparent-sasuke-uchiha-naruto-shippuden-naruto-vs-sasuke-naruto-uzumaki-itachi-uchiha-orochimaru-naruto-purple-black-hair-manga-thumbnail.png";
+enemyImage.src = "https://www.japan-baseball.jp/files/photosingle/318/image_idphoto/270x360/okoe_rui_l.jpg";
     function pushEnemies(canvas) {
         const w=SIZE;
         const h=SIZE;

@@ -10,7 +10,7 @@ export const player = {
     score: 0,
 };
 const playerImage = new Image();
-playerImage.src = "https://e1.pxfuel.com/desktop-wallpaper/985/174/desktop-wallpaper-naruto-kurama-fire-flame-person-human-transparent-png-pngset.jpg";
+playerImage.src = "https://baseballking.jp/wp-content/uploads/2022/08/2022081310849-1200x800.jpg";
 export function initPlayer(canvas) {
     player.x = canvas.width / 2 - player.width / 2;
     player.y = canvas.height - 60;
